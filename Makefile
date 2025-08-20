@@ -17,3 +17,8 @@ reset:
 	docker compose down -v || true
 	rm -rf data || true
 	bash scripts/gen-env.sh -f
+
+
+update:
+	docker compose pull
+	docker compose up -d
