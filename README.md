@@ -7,7 +7,12 @@
 На чистом сервере Ubuntu/Debian достаточно одной команды:
 
 ```bash
-curl -s https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/main/install.sh | bash
+git clone https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne.git
+cd SeaFile-WithRedis-ALLinOne
+cp .env.example .env
+nano .env   # впишите свои значения (LOCAL_IP, EMAIL, пароли)
+chmod +x install.sh
+./install.sh
 ```
 
 (или просто скачайте репозиторий и выполните `./install.sh`).
