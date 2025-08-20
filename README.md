@@ -4,8 +4,8 @@
 
 ## 🚀 Быстрый старт
 ```bash
-git clone https://github.com/RoXyGeNOFF/seafile-local-install.git
-cd seafile-local-install
+git clone https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne.git
+cd SeaFile-WithRedis-ALLinOne
 cp .env.example .env
 nano .env   # впишите свои значения (LOCAL_IP, EMAIL, пароли)
 chmod +x install.sh
