@@ -7,7 +7,7 @@
 На чистом сервере Ubuntu/Debian достаточно одной команды:
 
 ```bash
-curl -s https://raw.githubusercontent.com/USERNAME/REPO/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/main/install.sh | bash
 ```
 
 (или просто скачайте репозиторий и выполните `./install.sh`).
@@ -34,7 +34,7 @@ docker compose logs -f seafile          # Seafile сервер
 
 # Seafile + nginx-proxy + Let's Encrypt (docker-compose)
 
-Этот репозиторий полностью переработан: самоподписанные сертификаты удалены, добавлен реверс‑прокси **nginx-proxy** и автоматическая выдача/продление сертификатов **Let's Encrypt** через **acme-companion**.
+Этот репозиторий полностью переработан: Добавлен реверс‑прокси **nginx-proxy** и автоматическая выдача/продление сертификатов **Let's Encrypt** через **acme-companion**.
 
 ## Быстрый старт
 
@@ -61,20 +61,11 @@ docker compose logs -f seafile          # Seafile сервер
   - `nginx-proxy` (порт 80/443)
   - `acme-companion` (Let's Encrypt)
   - `db` (MariaDB 10.11)
-  - (удалено)
   - `redis`
   - `seafile` (официальный образ `seafileltd/seafile-mc`)
 - `.env.example` — шаблон переменных окружения
-- `scripts/setup-letsencrypt.sh` — быстрый запуск
+- `scripts/setup-letsencrypt.sh` — быстрый выпуск сертов
 - `nginx/` — каталоги, которые использует nginx-proxy и companion
-- `docker-compose.legacy.yml` — прежний стек (сохранён для сравнения/миграции, если он был найден)
-
-## Миграция с прежней установки
-
-- Если у вас уже были тома с данными Seafile/MariaDB:
-  - Измените секцию `volumes:` в `docker-compose.yml`, чтобы подключить существующие тома или каталоги.
-- Если вы до этого использовали самоподписанные сертификаты/статический nginx:
-  - Эти файлы удалены из репозитория. Теперь выпуск/продление выполняет `acme-companion`.
 
 ## Полезные команды
 
@@ -98,6 +89,3 @@ docker compose pull && docker compose up -d
   раскомментируйте переменную `ACME_CA_URI` в сервисе `acme-companion` в `docker-compose.yml`.
 - Убедитесь, что DNS записи `A/AAAA` для `вашего домена` указывают на ваш сервер, и порты 80/443 доступны из интернета.
 - Если ваш Seafile был настроен на другой порт/URL, убедитесь, что переменные `SEAFILE_SERVER_HOSTNAME` и `VIRTUAL_PORT` соответствуют действительности.
-
----
-Сгенерировано автоматически 2025-08-20 17:06 UTC
