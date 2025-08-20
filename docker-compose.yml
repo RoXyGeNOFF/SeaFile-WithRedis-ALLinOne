@@ -59,13 +59,6 @@ services:
     networks:
       - seafile
 
-  # Memcached (recommended by Seafile)
-
-    image: memcached:1.6-alpine
-    restart: unless-stopped
-    networks:
-      - seafile
-
   # Redis (if your previous stack used Redis, keep it here)
   redis:
     image: redis:6-alpine
