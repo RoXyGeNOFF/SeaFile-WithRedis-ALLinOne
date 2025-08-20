@@ -7,7 +7,7 @@
 На чистом сервере Ubuntu/Debian достаточно одной команды:
 
 ```bash
-curl -s https://raw.githubusercontent.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/main/install.sh | bash
+curl -s https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/main/install.sh | bash
 ```
 
 (или просто скачайте репозиторий и выполните `./install.sh`).
