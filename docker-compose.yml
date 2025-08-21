@@ -1,4 +1,4 @@
-version: "3.9"
+
 
 services:
   mysql:
@@ -14,7 +14,7 @@ services:
     volumes:
       - ${MYSQL_DATA_DIR}:/var/lib/mysql
     networks:
-      - ${DOCKER_NETWORK}
+      - ${DOCKER_NETWORK}  # Ensure this matches the network name below
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -p${MYSQL_ROOT_PASSWORD} --silent"]
       start_period: 30s
@@ -65,3 +65,8 @@ services:
       retries: 20
       start_period: 30s
     restart: unless-stopped
+
+# Define the network here
+networks:
+  ${DOCKER_NETWORK}:
+    name: ${DOCKER_NETWORK}  # Explicitly set the network name
