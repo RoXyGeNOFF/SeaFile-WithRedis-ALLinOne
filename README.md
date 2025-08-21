@@ -2,9 +2,9 @@
 Просто скачайте и запустите наш скрипт:
 
 ```bash
-curl -o install_seafile.sh https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/install_seafile.sh
-chmod +x install_seafile.sh
-./install_seafile.sh
+curl -o instant_seafile.sh https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/instant_seafile.sh
+chmod +x instant_seafile.sh
+./instant_seafile.sh
 ```
 Готовый репозиторий для развёртывания **Seafile 11+** с помощью Docker Compose:
 **Seafile**, **Nginx**, **Certbot (Let's Encrypt)**, **MySQL 8.0**, **Redis**, **Elasticsearch 7.x**.
