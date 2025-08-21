@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Яркий и понятный скрипт установки Seafile для новичков
 echo "🐳 Начинаем установку Seafile с Redis и Elasticsearch!"
 echo "📦 Этот скрипт сделает всё автоматически..."
 echo ""
@@ -80,7 +79,7 @@ services:
     volumes:
       - ${MYSQL_DATA_DIR}:/var/lib/mysql
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -p${MYSQL_ROOT_PASSWORD} --silent"]
       start_period: 30s
@@ -99,7 +98,7 @@ services:
     volumes:
       - ${REDIS_DATA_DIR}:/data
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     healthcheck:
       test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
@@ -123,7 +122,7 @@ services:
     volumes:
       - ${ELASTIC_DATA_DIR}:/usr/share/elasticsearch/data
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:9200 >/dev/null 2>&1"]
       interval: 15s
@@ -143,14 +142,10 @@ services:
       SEAFILE_SERVER_HOSTNAME: localhost
       SEAFILE_ADMIN_EMAIL: admin@example.com
       SEAFILE_ADMIN_PASSWORD: secret_admin_password
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER_PASSWORD: ${MYSQL_USER_PASSWORD}
-      REDIS_PASSWORD: ${REDIS_PASSWORD}
-      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
     volumes:
       - ./seahub-data:/shared
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     depends_on:
       - mysql
       - redis
