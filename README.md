@@ -7,5 +7,6 @@
 ```bash
 git clone https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne.git
 cd SeaFile-WithRedis-ALLinOne
+chmod +x install-ubuntu.sh
 sudo bash install-ubuntu.sh
 ```
