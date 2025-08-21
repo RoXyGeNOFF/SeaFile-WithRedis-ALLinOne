@@ -1,8 +1,0 @@
-# Ignore runtime data
-data/
-.env.local
-*.swp
-*.swo
-.DS_Store
-*.log
-__pycache__/
