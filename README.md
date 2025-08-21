@@ -1,5 +1,11 @@
 # Seafile Docker Stack (Ubuntu 24.04)
+Просто скачайте и запустите наш скрипт:
 
+```bash
+curl -o install_seafile.sh https://raw.githubusercontent.com/ваш-username/ваш-репозиторий/main/install_seafile.sh
+chmod +x install_seafile.sh
+./install_seafile.sh
+```
 Готовый репозиторий для развёртывания **Seafile 11+** с помощью Docker Compose:
 **Seafile**, **Nginx**, **Certbot (Let's Encrypt)**, **MySQL 8.0**, **Redis**, **Elasticsearch 7.x**.
 
