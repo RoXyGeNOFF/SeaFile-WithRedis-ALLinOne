@@ -2,7 +2,7 @@
 Просто скачайте и запустите наш скрипт:
 
 ```bash
-curl -o instant_seafile.sh https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/instant_seafile.sh
+curl -o instant_seafile.sh https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/blob/main/instant_seafile.sh
 chmod +x instant_seafile.sh
 ./instant_seafile.sh
 ```
