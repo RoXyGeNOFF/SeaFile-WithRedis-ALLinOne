@@ -5,7 +5,7 @@
 
 ## 🚀 Быстрый старт (на чистой Ubuntu с правами sudo)
 ```bash
-git clone https://github.com/RoXyGeNOFF/SeaFile-ALLinOne.git
-cd SeaFile-ALLinOne
+git clone https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne.git
+cd SeaFile-WithRedis-ALLinOne
 sudo bash install-ubuntu.sh
 ```
