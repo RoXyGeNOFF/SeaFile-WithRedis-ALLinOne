@@ -14,7 +14,7 @@ services:
     volumes:
       - ${MYSQL_DATA_DIR}:/var/lib/mysql
     networks:
-      - ${DOCKER_NETWORK}  # Ensure this matches the network name below
+      - seafile_net
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -p${MYSQL_ROOT_PASSWORD} --silent"]
       start_period: 30s
@@ -33,7 +33,7 @@ services:
     volumes:
       - ${REDIS_DATA_DIR}:/data
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     healthcheck:
       test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
@@ -57,7 +57,7 @@ services:
     volumes:
       - ${ELASTIC_DATA_DIR}:/usr/share/elasticsearch/data
     networks:
-      - ${DOCKER_NETWORK}
+      - seafile_net
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:9200 >/dev/null 2>&1"]
       interval: 15s
@@ -66,7 +66,8 @@ services:
       start_period: 30s
     restart: unless-stopped
 
-# Define the network here
+# Явное определение сети
 networks:
-  ${DOCKER_NETWORK}:
-    name: ${DOCKER_NETWORK}  # Explicitly set the network name
+  seafile_net:
+    name: seafile_net
+    driver: bridge
