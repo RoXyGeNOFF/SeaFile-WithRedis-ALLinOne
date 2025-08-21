@@ -2,7 +2,7 @@
 Просто скачайте и запустите наш скрипт:
 
 ```bash
-curl -o install_seafile.sh https://raw.githubusercontent.com/ваш-username/ваш-репозиторий/main/install_seafile.sh
+curl -o install_seafile.sh https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/install_seafile.sh
 chmod +x install_seafile.sh
 ./install_seafile.sh
 ```
