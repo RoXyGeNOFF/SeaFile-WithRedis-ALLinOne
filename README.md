@@ -4,7 +4,7 @@
 ```bash
 git clone https://github.com/RoXyGeNOFF/SeaFile-WithRedis-ALLinOne/blob/main/instant_seafile.sh
 cd instant_seafile
-chmod +x install.sh
+chmod +x instant_seafile.sh
 ./instant_seafile.sh
 ```
 Готовый репозиторий для развёртывания **Seafile 11+** с помощью Docker Compose:
